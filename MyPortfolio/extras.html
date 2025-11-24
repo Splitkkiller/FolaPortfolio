@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="extras-body">
+
+  <div class="page-container">
+    
+    <!-- Background Elements -->
+    <div class="background-wrapper">
+      <div class="noise-overlay"></div>
+      <div class="blob blob-1" id="blob1"></div>
+      <div class="blob blob-2" id="blob2"></div>
+      <div class="blob blob-3" id="blob3"></div>
+    </div>
+
+    <!-- Main Content Card -->
+    <main class="glass-card">
+      
+      <!-- Icon Badge -->
+      <div class="icon-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      </div>
+
+      <!-- Text Content -->
+      <h1 class="error-code">404</h1>
+      <h2 class="error-title">Lost in the Void?</h2>
+      <p class="error-description">
+        It seems pretty quiet here. The page you are looking for might have drifted away into the digital abyss.
+      </p>
+
+      <!-- Actions -->
+      <div class="action-buttons">
+        <a href="/" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          Back Home
+        </a>
+        
+        <button onclick="window.history.back()" class="btn btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Go Back
+        </button>
+      </div>
+
+    </main>
+
+
+
+  </div>
+
+  <!-- Simple Parallax Script -->
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      const blob1 = document.getElementById('blob1');
+      const blob2 = document.getElementById('blob2');
+      const blob3 = document.getElementById('blob3');
+
+      const x = (e.clientX / window.innerWidth) * 2 - 1;
+      const y = (e.clientY / window.innerHeight) * 2 - 1;
+
+      if(blob1) blob1.style.transform = `translate(${x * -20}px, ${y * -20}px)`;
+      if(blob2) blob2.style.transform = `translate(${x * 25}px, ${y * 25}px)`;
+      if(blob3) blob3.style.transform = `translate(${x * -15}px, ${y * -15}px)`;
+    });
+  </script>
+</body>
+</html>
